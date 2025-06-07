@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced Image Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="loader"><div class="spinner"></div></div>
+
+  <header>
+    <h1>🌟 Explore the Gallery</h1>
+    <input type="text" id="searchBox" placeholder="🔍 Search images..." onkeyup="searchImages()" />
+    <div class="filters">
+      <button onclick="filterGallery('all')">All</button>
+      <button onclick="filterGallery('nature')">Nature</button>
+      <button onclick="filterGallery('animals')">Animals</button>
+      <button onclick="filterGallery('architecture')">Architecture</button>
+    </div>
+  </header>
+
+  <main class="gallery">
+    <!-- Sample images: repeat as needed -->
+    <div class="gallery-item nature" data-title="Mountain Morning"><img src="https://picsum.photos/id/1015/400/300" alt="Nature 1" /></div>
+    <div class="gallery-item animals" data-title="Sleeping Dog"><img src="https://picsum.photos/id/1025/400/300" alt="Animal 1" /></div>
+    <div class="gallery-item architecture" data-title="Modern Building"><img src="https://picsum.photos/id/1008/400/300" alt="Architecture 1" /></div>
+    <div class="gallery-item nature" data-title="Forest Trail"><img src="https://picsum.photos/id/1011/400/300" alt="Nature 2" /></div>
+    <div class="gallery-item animals" data-title="Bird Close-up"><img src="https://picsum.photos/id/1020/400/300" alt="Animal 2" /></div>
+    <div class="gallery-item architecture" data-title="Urban View"><img src="https://picsum.photos/id/1040/400/300" alt="Architecture 2" /></div>
+  </main>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" />
+    <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
+    <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
+  </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
